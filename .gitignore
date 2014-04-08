@@ -1,3 +1,16 @@
+# Node.JS #
+###########
+node_modules
+
+# Bower #
+#########
+
+bower_components
+
+
+# General Suggested Files #
+###########################
+
 # Compiled source #
 ###################
 *.com
