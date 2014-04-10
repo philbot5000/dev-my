@@ -1,0 +1,22 @@
+/*
+  In order for this to override styles it must be the last css file loaded
+  in index.html.  Also if the !important attribute is used in other stylesheets
+  it may still override styles defined in here. -PM
+*/
+body { padding-top: 60px; }
+
+.navbar-inverse { background: rgba(9, 52, 122, 0.95); border-bottom: 4px solid rgb(241, 99, 42); }
+   .item, .placeholder {
+    padding: 2px;
+    width: 50px;
+    height: 20px;
+    border: 1px solid #333;
+    background: #EEE;
+}
+.placeholder {
+    background: #AEF;
+}
+.nav.nav-center {
+    margin:0;
+    float:none;
+}

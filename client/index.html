@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myBoiseState" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome to myBoiseState.">
+    <meta name="author" content="Boise State University">
+
+    <!-- Twitter media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@boisestatelive">
+    <meta name="twitter:title" content="myBoiseState">
+    <meta name="twitter:description" content="Welcome to myBoiseState.">
+    <meta name="twitter:creator" content="@boisestatelive">
+    <meta name="twitter:image:src" content="">
+    <!-- Facebook media tags -->
+    <meta property="og:title" content="myBoiseState">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://my.boisestate.edu">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Welcome to myBoiseState.">
+
+    <!-- build:css app/styles/app.min.css -->
+    <!-- TODO: Replace bootstrap.min.css with compiled LESS -->
+    <link rel="stylesheet" href="app/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="app/styles/overrides.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div ng-include src="'app/views/main-nav.html'"></div>
+
+    <!-- Loading Notification -->
+    <div view-loading ng-show="isViewLoading"></div>
+
+    <div ui-view="main"></div>
+
+    <!-- build:js app/scripts/all.min.js -->
+    <!-- Angular -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="app/scripts/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/scripts/controllers/Athletics/athletics.js"></script>
+    <script src="app/scripts/controllers/MyUpdate/myUpdate.js"></script>
+
+    <!-- Directives -->
+    <script src="app/scripts/modules/directives/loader.js"></script>
+
+    <!-- Services -->
+    <script src="app/scripts/services/athletics.js"></script>
+    <script src="app/scripts/services/myUpdate.js"></script>
+
+    <!-- endbuild -->
+
+  </body>
+</html>
