@@ -2,6 +2,8 @@
 angular.module('myBoiseState', [
   'ui.router',
   'ui.bootstrap',
+  'myBoiseState.profile',
+  'myBoiseState.mainNav',
   'myBoiseState.myUpdate',
   'myBoiseState.athletics'
 ])
@@ -14,7 +16,7 @@ angular.module('myBoiseState', [
 
 .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
 
-  // Sets up our 'Loading...' mask when t
+  // Sets up our 'Loading...' indicator.
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
   $rootScope.isViewLoading = true;
@@ -29,15 +31,12 @@ angular.module('myBoiseState', [
 
   $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
     $rootScope.setLoading();
-    console.log('State change started.');
-
   });
 
   $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
     $rootScope.unsetLoading();
-    console.log('State change complete.');
-    console.log($rootScope.isViewLoading);
   });
+  // End Loading Indicator Logic
 
 }])
 
@@ -49,7 +48,7 @@ angular.module('myBoiseState', [
       // Dynamically change page title in header based on view
       function(event, toState, toParams, fromState, fromParams) {
         if(angular.isDefined(toState.data.pageTitle)) {
-          $scope.pageTitle = toState.data.pageTitle + ' | myBoiseState';
+          $scope.pageTitle = 'myBoiseState | '+ toState.data.pageTitle;
         }
       }
     );
@@ -59,3 +58,5 @@ angular.module('myBoiseState', [
 // Define all our modules first here.
 angular.module('myBoiseState.athletics', []);
 angular.module('myBoiseState.myUpdate', ['ngSanitize']);
+angular.module('myBoiseState.mainNav', []);
+angular.module('myBoiseState.profile', []);
